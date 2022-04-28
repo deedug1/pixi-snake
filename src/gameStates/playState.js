@@ -3,7 +3,6 @@ import Snake from "./../snake.js";
 import Apple from "./../apple.js";
 import {overlaps} from "./../utils.js";
 
-
 class PlayState extends GameState {
 
     constructor() {

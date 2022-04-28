@@ -1,6 +1,7 @@
 import { GRID_SIZE } from "./gameConsts.js";
 import PlayState from "./gameStates/playState.js";
 import StartState from "./gameStates/startState.js";
+import * as PIXI from "./pixi.js";
 
 
 class Game {
