@@ -5,7 +5,7 @@ import StartState from "./gameStates/startState.js";
 
 class Game {
 
-    constructor() {
+    constructor(containerName) {
         this.app = new PIXI.Application({width: GRID_SIZE, height: GRID_SIZE });
         this._applyState(new StartState());
         
@@ -18,8 +18,8 @@ class Game {
                 this.getNextState();
             }
         });
-        
-        document.body.appendChild(this.app.view);
+        const container = document.getElementById(containerName);
+        container.appendChild(this.app.view);
     }
 
     getNextState() {

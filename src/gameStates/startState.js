@@ -1,8 +1,6 @@
 import GameState from "./gameState.js";
 import { getKeyboardListener } from "../utils.js";
 
-
-
 class StartState extends GameState {
 
     constructor() {

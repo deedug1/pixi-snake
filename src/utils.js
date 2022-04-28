@@ -49,9 +49,6 @@ function getKeyboardListener(value) {
 
 
 function overlaps(sprite1, sprite2) {
-    console.log(`x1: ${sprite1.x}, y1: ${sprite1.y}`);
-    console.log(`x2: ${sprite2.x}, y2: ${sprite2.y}`);
-
     if(sprite1.x == sprite2.x
         && sprite1.y == sprite2.y) {
             return true;
