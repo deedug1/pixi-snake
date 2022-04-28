@@ -1,5 +1,6 @@
 import GameState from "./gameState.js";
 import { getKeyboardListener } from "../utils.js";
+import * as PIXI from "../pixi.js";
 
 class StartState extends GameState {
 

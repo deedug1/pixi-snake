@@ -1,4 +1,5 @@
 import {CELL_SIZE, GRID_SIZE} from "./gameConsts.js";
+import * as PIXI from "./pixi.js";
 
 class Apple extends PIXI.Graphics{
 
