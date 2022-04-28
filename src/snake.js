@@ -2,7 +2,7 @@ import {CELL_SIZE, GRID_SIZE} from "./gameConsts.js";
 import {getKeyboardListener} from "./utils.js";
 
 
-class Snake extends PIXI.Container{
+class Snake extends PIXI.Container {
 
 
     constructor() {

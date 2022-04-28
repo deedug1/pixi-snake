@@ -4,7 +4,8 @@ class GameState {
 
 
     constructor() {
-        this.scene = new RenderContainer();
+        this.scene = new PIXI.Container();
+        this.createBackground(0xBBBBBB);
     }
 
     update() {
@@ -17,6 +18,19 @@ class GameState {
 
     goNext() {
         return false;
+    }
+
+    createBackground(color) {
+        if(this.background) {
+            this.scene.removeChild(this.background);
+            this.background.destroy();
+        }
+
+        this.background = new PIXI.Graphics();
+        this.background.beginFill(color);
+        this.background.drawRect(0, 0, 2000, 2000);
+        this.background.endFill();
+        this.scene.addChildAt(this.background, 0);
     }
 
 

@@ -1,16 +1,13 @@
-import Snake from "./snake.js";
-import { overlaps } from "./utils.js";
 import { GRID_SIZE } from "./gameConsts.js";
-import Apple from "./apple.js";
 import PlayState from "./gameStates/playState.js";
-
+import StartState from "./gameStates/startState.js";
 
 
 class Game {
 
     constructor() {
         this.app = new PIXI.Application({width: GRID_SIZE, height: GRID_SIZE });
-        this._applyState(new PlayState());
+        this._applyState(new StartState());
         
         this.app.ticker.add((delta) =>  {
             
@@ -35,11 +32,11 @@ class Game {
 
     _applyState(state) {
         this.state = state;
-        this.app.stage.addchild(state.scene);
+        this.app.stage.addChild(state.scene);
     }
 
     _destroyState() {
-        this.app.stage.removeChild(this.state);
+        this.app.stage.removeChild(this.state.scene);
         this.state.destroy();
         this.state = null;
     }
