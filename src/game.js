@@ -10,21 +10,38 @@ class Game {
 
     constructor() {
         this.app = new PIXI.Application({width: GRID_SIZE, height: GRID_SIZE });
-        this.state = new PlayState(this.app);
+        this._applyState(new PlayState());
         
         this.app.ticker.add((delta) =>  {
+            
+            if(!this.state) { return; }
+            
             this.state.update(delta);
             if(this.state.goNext()) {
                 this.getNextState();
             }
         });
-
+        
         document.body.appendChild(this.app.view);
     }
 
     getNextState() {
+        // Cleanup old state
+        this._destroyState();
+
+        // Create new state and add next
+        this._applyState(new PlayState());
+    }
+
+    _applyState(state) {
+        this.state = state;
+        this.app.stage.addchild(state.scene);
+    }
+
+    _destroyState() {
+        this.app.stage.removeChild(this.state);
         this.state.destroy();
-        this.state = new PlayState(this.app);
+        this.state = null;
     }
 
 }

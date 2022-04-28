@@ -6,12 +6,12 @@ import {overlaps} from "./../utils.js";
 
 class PlayState extends GameState {
 
-    constructor(app) {
-        super(app);
+    constructor() {
+        super();
         this.snake = new Snake();
         this.apple = new Apple();
-        app.stage.addChild(this.snake);
-        app.stage.addChild(this.apple);
+        this.scene.addChild(this.snake);
+        this.scene.addChild(this.apple);
     }
 
     update(delta) {
@@ -29,6 +29,7 @@ class PlayState extends GameState {
     destroy() {
         this.apple.destroy();
         this.snake.destroy();
+        this.scene.destroy();
     }
 
     goNext() {

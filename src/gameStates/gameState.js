@@ -3,8 +3,8 @@
 class GameState {
 
 
-    constructor(app) {
-
+    constructor() {
+        this.scene = new RenderContainer();
     }
 
     update() {
